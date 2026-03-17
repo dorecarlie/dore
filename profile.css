@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 30px;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: "Didot", "Times New Roman", serif;
+  font-size: 30px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.about {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.about:hover {
+  transform: scale(1.2);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu span {
+  width: 22px;
+  height: 2px;
+  background: black;
+}
+
+
+.banner {
+  height: 220px;
+  background: url("./images/header.jpg") no-repeat center center/cover;
+  margin-top: 60px;
+}
+
+
+.content {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.section-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+
+.product-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+
+.like {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.8);
+  padding: 5px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+
+.product-info {
+  padding: 10px;
+}
+
+.brand {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.size {
+  font-size: 12px;
+  color: gray;
+}
+
+.price {
+  font-weight: bold;
+  margin-top: 5px;
+}

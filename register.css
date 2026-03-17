@@ -1,0 +1,163 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width:90%;
+    max-width:400px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size: 36px;
+    color:white;
+    
+}
+
+body {
+    height: 100vh;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: url("./images/yara.jpg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    background-color: rgba(45, 45, 52, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form container */
+form {
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Input fields */
+input[type="text"],
+input[type="password"] {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 15px 5px;
+    font-size: 16px;
+    margin-bottom: 35px;
+    outline: none;
+    transition: 0.3s ease;
+    color:white;
+}
+
+/* Focus effect (line turns darker) */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-bottom: 2px solid white;
+}
+
+/* Submit button */
+input[type="submit"] {
+   background-color:transparent;
+    color:white;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: white;
+    color:black;
+}
+
+/* Placeholder styling */
+::placeholder {
+    color:#fafafa;
+}
+h5 {
+    font-size: 15px;
+    font-weight: 300;
+    opacity: 0.8;
+    line-height: 1.6;
+    color:white;
+    margin-bottom:80px;
+    margin-left: 90px;;
+}
+.login{
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    color:white;
+
+}
+.navbar {
+    position:fixed;
+    top:0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+
+/* Logo */
+.logo {
+    font-family: "Didot", "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+/* Right side */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Subscribe button */
+.subscribe-btn {
+    background-color: white;
+    color:black;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    
+}
+
+.subscribe-btn:hover {
+    transform:scale(1.3);
+}
+
+/* Icons */
+.icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Hamburger menu */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu span {
+    width: 22px;
+    height: 2px;
+    background: black;
+}

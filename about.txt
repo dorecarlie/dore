@@ -1,0 +1,6 @@
+Doré is a fashion app dedicated to make casting models for certain shoots easier.
+The purpose of this app is to keep things organized and helps bring spotlight to upcoming models to get
+exposed into the fashion world as well. With this app, users can sign up either as a model, or a casting
+director. As a model, they are able to upload posts to their online portfolio such as headshots for example. They are
+also able to have a small bio, as well as their location, contact information and measurements. This is put 
+onto.  
