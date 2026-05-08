@@ -73,4 +73,4 @@ async function login(user){
 
 
 
-module.exports = { getAllUsers }
+module.exports = { getAllUsers, register, updateUser, deleteUser, login }
