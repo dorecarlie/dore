@@ -24,6 +24,12 @@ async function getAllUsers() {
     return await con.query(sql)
 }
 
+async function getUserByEmail(email){
+  let sql = `SELECT * FROM USER WHERE email = ?`
+  let cUser = await con.query(sql, [email])
+  return cUser[0]
+}
+
 async function register(user){
   let cUser = await getUserByEmail(user.email)
   if(cUser) throw Error("Email already in use!")
@@ -64,6 +70,7 @@ async function login(user){
 
     return cUser
 }
+
 
 
 module.exports = { getAllUsers }
