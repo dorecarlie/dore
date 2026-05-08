@@ -28,6 +28,15 @@ router.get('/getAllUsers', async (req, res) => {
     }
 })
 
+.put('/update', async (req, res) => {
+    try{
+        const user = await User.updateUser(req.body)
+        res.send({message: "User has updated!"})
+    } catch{err}{
+        res.status(401).send({message: err.message})
+    }
+})
+
 
 
 
