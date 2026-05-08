@@ -19,6 +19,15 @@ router.get('/getAllUsers', async (req, res) => {
         res.status(401).send({message: err.message})
     }
 })
+.post('/register', async (req, res) => {
+    try{
+        const user = await User.register(req.body)
+        res.send({...user, password: undefined})
+    } catch{err}{
+        res.status(401).send({message: err.message})
+    }
+})
+
 
 
 
