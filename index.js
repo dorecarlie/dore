@@ -7,7 +7,6 @@ app.use(express.json())
 const userRoutes = require("./server/routes/user")
 const itemRoutes = require("./server/routes/item")
 
-//CORS middleware
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");  
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
@@ -18,8 +17,6 @@ app.use(function(req, res, next) {
 app.use("/user", userRoutes)
 app.user("item", itemRoutes)
 
-// instead of having a domain name like, www.bestrecipes.com, 
-// we are using localhost:3000 (3000 is in our .env file which is not accessible.)
 
 const PORT = process.env.PORT || 3500
 
