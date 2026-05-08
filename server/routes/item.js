@@ -31,7 +31,14 @@ router
     }
 })
 
-
+.delete('/de;ete', async (req, res) => {
+    try{
+        await Item.deleteItem(req.body.item_id)
+        res.send({message: "Item has been deleted!"})
+    } catch(err){
+        res.status(401).send({message: err.message})
+    }
+})
 
 
 
