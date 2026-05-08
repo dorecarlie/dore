@@ -50,6 +50,10 @@ async function updateUser(user){
 
 }
 
+async function deleteUser(user_id){
+  let sql = `DELETE FROM User WHERE user_id = ?`
+  return await con.query(sql, [user_id])
+}
 
 
 module.exports = { getAllUsers }
