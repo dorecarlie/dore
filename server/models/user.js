@@ -1,4 +1,5 @@
 const con = require("./db_connect")
+const bcrypt = require("bcrypt")
 
 async function createUserTable() {
     let sql = `
@@ -22,5 +23,7 @@ async function getAllUsers() {
     `
     return await con.query(sql)
 }
+
+
 
 module.exports = { getAllUsers }
