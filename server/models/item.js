@@ -25,4 +25,14 @@ async function getAllItems() {
     return await con.query(sql)
 }
 
+async function createItem(item){
+  let sql = `
+    INSERT INTO Item(user_id, category, description, size, item_condition, price)
+    VALUES(?,?,?,?,?,?)
+  `
+  return await con.query(sql, [item.user_id, item.category, item.description, item.size, item.item_condition, item.price])
+}
+
+
+
 module.exports = { getAllItems }
