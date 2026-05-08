@@ -29,6 +29,11 @@ async function register(user){
   if(cUser) throw Error("Email already in use!")
 
     let hashedPassword = await bcrypt.hash(user.password, 10)
+
+    let sql = `
+    INSERT INTO User(full_name, email, password, location, bio)
+    VALUES(?, ?, ?, ?, ?)
+    `
 }
 
 
