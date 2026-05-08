@@ -55,5 +55,15 @@ async function deleteUser(user_id){
   return await con.query(sql, [user_id])
 }
 
+async function login(user){
+  let cUser = await getUserByEmail(user.email)
+  if(!cUser) throw Error("Email not found!")
+
+    let match = await bcrypt.compare(user.password, cUser.password)
+    if(!match) throw Error("Password Incorrect!")
+
+    return cUser
+}
+
 
 module.exports = { getAllUsers }
