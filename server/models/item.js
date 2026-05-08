@@ -48,5 +48,9 @@ async function updateItem(item){
   return await con.query(sql, [item.category, item.description, item.size, item.item_condition, item.price, item.item_id])
 }
 
+async function deleteItem(item_id){
+  let sql = `DELETE FROM Item WHERE item_id = ?`
+  return await con.query(sql, [item_id])
+}
 
 module.exports = { getAllItems }
