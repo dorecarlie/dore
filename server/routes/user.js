@@ -37,12 +37,14 @@ router.get('/getAllUsers', async (req, res) => {
     }
 })
 
-
-
-
-
-
-
+.delete('/delete', async (req, res) => {
+    try{
+        const user = await User.deleteUser(req.body)
+        res.send({message: "User has been deleted!"})
+    } catch{err}{
+        res.status(401).send({message: err.message})
+    }
+})
 
 
 
