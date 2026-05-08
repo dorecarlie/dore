@@ -22,7 +22,7 @@ router
     }
 })
 
-.pur('/update', async (req, res) => {
+.put'/update', async (req, res) => {
     try{
         const updatedItem = await Item.updateItem(req.body)
         res.send({message: "Item has been updated!"})
@@ -30,6 +30,8 @@ router
         res.status(401).send({message: err.message})
     }
 })
+
+
 
 
 
