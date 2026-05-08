@@ -40,6 +40,16 @@ async function register(user){
     return await NavigatorLogin(userß)
 }
 
+async function updateUser(user){
+  let sql = `
+  UPDATE User
+  SET full_name = ?, location = ?, bio = ?
+  WHERE user_id = ?
+  `
+  return await con.query(sql, [user.full_name, user.location, user.bio, user.user_id])
+
+}
+
 
 
 module.exports = { getAllUsers }
