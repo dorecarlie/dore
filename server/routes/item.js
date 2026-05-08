@@ -22,7 +22,14 @@ router
     }
 })
 
-
+.pur('/update', async (req, res) => {
+    try{
+        const updatedItem = await Item.updateItem(req.body)
+        res.send({message: "Item has been updated!"})
+    } catch(err){
+        res.status(401).send({message: err.message})
+    }
+})
 
 
 
