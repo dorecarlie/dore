@@ -24,6 +24,13 @@ async function getAllUsers() {
     return await con.query(sql)
 }
 
+async function register(user){
+  let cUser = await getUserByEmail(user.email)
+  if(cUser) throw Error("Email already in use!")
+
+    let hashedPassword = await bcrypt.hash(user.password, 10)
+}
+
 
 
 module.exports = { getAllUsers }
