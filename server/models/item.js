@@ -39,6 +39,14 @@ async function getItemById(item_id){
   return result[0]
 }
 
+async function updateItem(item){
+  let sql = `
+    UPDATE Item
+    SET category = ?, description = ?, size = ?, item_condition = ?, price = ?
+    WHERE item_id = ?
+  `
+  return await con.query(sql, [item.category, item.description, item.size, item.item_condition, item.price, item.item_id])
+}
 
 
 module.exports = { getAllItems }
