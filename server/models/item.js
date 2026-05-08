@@ -53,4 +53,4 @@ async function deleteItem(item_id){
   return await con.query(sql, [item_id])
 }
 
-module.exports = { getAllItems }
+module.exports = { getAllItems, createItem, getItemById, updateItem, deleteItem }
