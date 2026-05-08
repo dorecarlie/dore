@@ -33,6 +33,12 @@ async function createItem(item){
   return await con.query(sql, [item.user_id, item.category, item.description, item.size, item.item_condition, item.price])
 }
 
+async function getItemById(item_id){
+  let sql = `SELECT * FROM Item WHERE item,_id = ?`
+  let result = await con.query(sql, [item_id])
+  return result[0]
+}
+
 
 
 module.exports = { getAllItems }
