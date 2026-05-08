@@ -8,8 +8,9 @@ class User{
 }
 
 const registerForm = document.getElementById("registerForm");
-
+if(registerForm){
 registerForm.addEventListener("submit", register);
+}
 
 function register(event){
     event.preventDefault();
