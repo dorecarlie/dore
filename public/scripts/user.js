@@ -1,40 +1,66 @@
-class User{
-    constructor(firstname, lastname, email, password){
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-        this.password = password;
+import { fetchData } from "./main.js"
+
+
+let loginForm = document.getElementById("loginForm")
+if(loginForm) loginForm.addEventListener('submit', login)
+
+function login(e) {
+    e.preventDefault()
+
+    let email = document.getElementById("email").value
+    let password = document.getElementById("password").value 
+
+    const user = {
+        email: email,
+        password: password
     }
+
+    fetchData('/user/login', user, 'POST')
+    .then(data => {
+        if(!data.message) {
+            setCurrentUser(data)
+            window.location = "item-form.html" 
+        }
+    })
+    .catch(err => {
+        console.log(err.message)
+    })
 }
 
-const registerForm = document.getElementById("registerForm");
-if(registerForm){
-registerForm.addEventListener("submit", register);
+let registerForm = document.getElementById("registerForm")
+if(registerForm) registerForm.addEventListener('submit', register)
+
+function register(e) {
+    e.preventDefault()
+
+    const user = {
+        full_name: document.getElementById("fullname").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+        location: document.getElementById("location").value,
+        bio: document.getElementById("bio").value
+    }
+
+    fetchData('/user/register', user, 'POST')
+    .then(data => {
+        if(!data.message) {
+            setCurrentUser(data)
+            window.location = "item-form.html"
+        }
+    })
+    .catch(err => console.log(err.message))
 }
 
-function register(event){
-    event.preventDefault();
-    
-    const firstname = document.getElementById("firstname").value;
-    const lastname = document.getElementById("lastname").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+async function setCurrentUser(user) {
 
-    const newUser = new User(firstname, lastname, email, password);
-
-    console.log("register: ", newUser);
+    await localStorage.setItem('user', JSON.stringify(user))
 }
 
+export async function getCurrentUser() {
+    return await JSON.parse(localStorage.getItem('user'))
+}
 
-const loginForm = document.getElementById("loginForm");
-
-loginForm.addEventListener("submit", login);
-
-function login(event){
-    event.preventDefault();
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    console.log("login attempt: ", email, password);
+export async function logout() {
+    localStorage.removeItem('user')
+    window.location = "login.html"
 }
