@@ -34,6 +34,10 @@ async function register(user){
     INSERT INTO User(full_name, email, password, location, bio)
     VALUES(?, ?, ?, ?, ?)
     `
+
+    await con.query(sql, [user.full_name, user.email, hashedPassword, user.location, user.bio])
+
+    return await NavigatorLogin(userß)
 }
 
 
